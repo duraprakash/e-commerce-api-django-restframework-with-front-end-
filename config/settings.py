@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'user',
+    'corsheaders', # 1.1 CORS
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.CommonMiddleware', # 1.2 CORS
+    'corsheaders.middleware.CorsMiddleware', # 1.3 CORS
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -130,3 +133,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # authentication in a Django project. By setting this variable to a specific model, you can customize
 # the user model used by Django authentication system.
 AUTH_USER_MODEL="user.User"
+
+# # pip install django-cors-headers # 1.0 CORS
+
+# # Optionally, configure CORS settings in your Django settings file. 
+# # For development purposes, you can allow all origins by adding the following line:
+CORS_ALLOW_ALL_ORIGINS = True # 1.4 CORS [optional]
+
+# # OR
+# # You can also specify allowed origins, methods, headers, etc. For example:
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:8000",
+#     "http://127.0.0.1:8000",
+#     # Add more origins as needed
+# ]
+
+
+

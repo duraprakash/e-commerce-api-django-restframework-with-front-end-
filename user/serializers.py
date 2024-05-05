@@ -30,7 +30,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UserListSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['email', 'username']
+        fields = ['id', 'email', 'username']
 
 class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(required=True)

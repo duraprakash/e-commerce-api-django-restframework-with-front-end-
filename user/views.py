@@ -23,9 +23,9 @@ class UserListView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserListSerializer
 
-    # need token key to access user list [Authorization Token tokenkey] in postman header
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication]
+    # # need token key to access user list [Authorization Token tokenkey] in postman header
+    # permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
 
 class UserCreateView(CreateAPIView):
     serializer_class = UserSerializer

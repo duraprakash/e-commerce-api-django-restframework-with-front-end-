@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h1>User Management</h1>
+    <!-- Error and Success Messages -->
+    <div id="errorMessage" class="alert alert-danger d-none" role="alert"></div>
+    <div id="successMessage" class="alert alert-success d-none" role="alert"></div>
+    
+    <form id="userForm">
+      <!-- Hidden input field to store user ID -->
+      <input type="hidden" id="userId" name="userId">
+      
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password" name="password">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <!-- Update button text based on whether a user ID is present -->
+      <button type="submit" class="btn btn-primary" id="saveBtn">Create</button>
+    </form>
+
+    <hr>
+
+    <h2>Users</h2>
+    <ul id="userList" class="list-group">
+      <!-- User list will be populated here -->
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="try.js"></script>
+</body>
+</html>
